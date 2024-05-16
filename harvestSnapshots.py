@@ -36,7 +36,7 @@ graphURL = 'https://api.goldsky.com/api/public/project_cltwyhnfyl4z001x17t5odo5x
 harvestEvents = subgraphRequest(harvestQuery, graphURL)
 
 for event in harvestEvents:
-#flattening the response, and adding prior block number
+#flattening the response, and adding prior block number, and getting yield token balance and underlying balance for that prior block
 
     event['block'] = int(event['block']['number'])
     event['contract'] = event['contract']['id']
